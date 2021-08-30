@@ -8,7 +8,7 @@ function Team(){
           <h2>TEAM</h2>
         </div>
 
-        <div className="row content team_hodl">
+        {/* <div className="row content team_hodl">
 
 
 
@@ -29,7 +29,7 @@ function Team(){
             
           </div>
 
-        </div>
+        </div> */}
 
         <div className="row content team_hodl">
 
@@ -37,19 +37,22 @@ function Team(){
 
             <div className="shape">
               <img src={HeroImg} className="img-fluid animated" alt="" />
-            <h4>Allen - Marketing Lead</h4>
+            <h4>Adam Roberts</h4>
+            <h5>Marketing Lead</h5>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="shape">
               <img src={HeroImg} className="img-fluid animated" alt="" />
-            <h4>Justin - Collaborations & Partnerships</h4>
+            <h4>Jeff Gilden</h4>
+            <h5>Communications</h5>
             </div>
           </div>
           <div className="col-lg-4">
              <div className="shape">
               <img src={HeroImg} className="img-fluid animated" alt="" />
-            <h4>JC Wright - Lead Developer</h4>
+            <h4>Robert Tyrell</h4>
+            <h5>Marketing Specialist</h5>
             </div>
           </div>
 

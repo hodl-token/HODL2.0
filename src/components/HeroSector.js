@@ -195,7 +195,7 @@ $HODL brings the best of the best revolutionary mechanism to BSC ecosystem. <br/
          <div className="d-lg-flex">
            <a href="/dashboard" className="btn-get-started scrollto" target="_blank">Launch App</a>
            <a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x5788105375ecF7F675C29e822FD85fCd84d4cd86" className="btn-get-started scrollto " target="_blank">Buy Now</a>
-           <a href="https://hodlgames.net/" className="btn-get-started scrollto" target="_blank">HODL Wheel</a>
+           {/* <a href="https://hodlgames.net/" className="btn-get-started scrollto" target="_blank">HODL Wheel</a> */}
          </div>
        </div>
        <div className="col-lg-6 order-1 order-lg-2 hero-img  " data-aos="zoom-in" data-aos-delay="200">

@@ -9,14 +9,14 @@ function Header() {
       <a href="index.html" className="logo mr-auto"><img src={logo} alt="" className="img-fluid" /></a>
       <nav className="nav-menu d-none d-lg-block">
         <ul>
-         <li><a href="#about">Introduction</a></li>
-        
+          <li><a href="#about">Introduction</a></li>
+         
           <li ><a href="#tokenomics">Tokenomics</a></li>
           <li><a href="#calc">Rewards Calculator</a></li>
           <li><a href="#why-us">Roadmap</a></li>
           <li><a href="https://hodltoken.gitbook.io/hodl/" target="_blank">Documentation</a></li>
+          <li><a href="https://hodlstore.io/" target="_blank">Merchandise</a></li>
           <li><a href="#faq">FAQs</a></li>
-          
           {/* <li><a href="#team">Medium</a></li> */}
         </ul>
       </nav>

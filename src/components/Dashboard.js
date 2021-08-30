@@ -66,7 +66,8 @@ function Dashboard() {
   const [userreinvested, setuserreinvested] = useState(0);
   const [rewardhardCap, setrewardhardCap] = useState(0);
   const [totalgasdistributed, settotalgasdistributed] = useState(0);
- 
+
+  
 
   
   function web3apis() {
@@ -152,7 +153,7 @@ function Dashboard() {
 
 
     //  circulating Supply LM token
-    contract.methods
+    contract.methods 
       .balanceOf('0x000000000000000000000000000000000000dEaD')
       .call()
       .then((balance) => {
@@ -293,6 +294,10 @@ function Dashboard() {
       
     
   }
+
+
+
+  var priceperToken = ((( Number(1000000) * Number(LPbnb) ) / Number(LMbalanceLPpool)* oneBNBprice))/Number(1000000);
 
 
   async function submitform() {
@@ -1192,7 +1197,17 @@ function Dashboard() {
                     <img src={Icon3} />
                   </div>
                   <h5>Total Reward Distributed</h5>
-                  <p>$ {new Intl.NumberFormat().format((totaldistributedBnb + totalgasdistributed) * oneBNBprice )}</p>
+
+                <p>
+            {/* $ {new Intl.NumberFormat().format((totaldistributedBnb + totalgasdistributed) * oneBNBprice ) */}
+            <AnimatedNumber
+                      value={(totaldistributedBnb + totalgasdistributed) * oneBNBprice}
+                      formatValue={(value) =>
+                        `$ ${new Intl.NumberFormat().format(value)}`
+                      }
+                      duration={300}
+                    />
+            </p>
                 </div>
               </div>
 
@@ -1207,7 +1222,17 @@ function Dashboard() {
                     <img src={Iconp4} />
                   </div>
                   <h5>Total HODL 2.0 Re-Invested</h5>
-                  <p> {new Intl.NumberFormat().format(totalreinvested.toFixed(0))}</p>
+                  <p> 
+                    {/* {new Intl.NumberFormat().format(totalreinvested.toFixed(0))} */}
+                    
+                    <AnimatedNumber
+                      value={totalreinvested.toFixed(0)}
+                      formatValue={(value) =>
+                        ` ${new Intl.NumberFormat().format(value)}`
+                      }
+                      duration={300}
+                    />
+                    </p>
                 </div>
               </div>
 
@@ -1224,9 +1249,93 @@ function Dashboard() {
                     <img src={Iconp1} />
                   </div>
                   <h5>Total Reflection Distributed</h5>
-                  <p> {new Intl.NumberFormat().format(totalreflection.toFixed(0))}</p>
+                  <p> 
+                    {/* {new Intl.NumberFormat().format(totalreflection.toFixed(0))} */}
+                    <AnimatedNumber
+                      value={totalreflection.toFixed(0)}
+                      formatValue={(value) =>
+                        ` ${new Intl.NumberFormat().format(value)}`
+                      }
+                      duration={300}
+                    />  
+                    </p>
                 </div>
               </div>
+
+
+              <div
+                className='col-xl-4 col-md-6 d-flex align-items-stretch'
+                data-aos='zoom-in'
+                data-aos-delay='100'
+              >
+                <div className='icon-box'>
+                  <div className='icon'>
+                    <img src={Iconp4} />
+                  </div>
+                  <h5>Gas fee redistributed</h5>
+                  <p>
+                    {/* $ {new Intl.NumberFormat().format(totalgasdistributed * oneBNBprice )} */}
+                    <AnimatedNumber
+                      value={totalgasdistributed * oneBNBprice}
+                      formatValue={(value) =>
+                        `$ ${new Intl.NumberFormat().format(value)}`
+                      }
+                      duration={300}
+                    />   
+                    
+                    </p>
+                </div>
+              </div>
+
+
+              <div
+                className='col-xl-4 col-md-6 d-flex align-items-stretch'
+                data-aos='zoom-in'
+                data-aos-delay='100'
+              >
+                <div className='icon-box'>
+                  <div className='icon'>
+                    <img src={Icon3} />
+                  </div>
+                  <h5>No of times Gas fee redistributed</h5>
+                  <p> 
+                    {/* {new Intl.NumberFormat().format(totalreflection.toFixed(0))} */}
+                    <AnimatedNumber
+                      value={(totalgasdistributed / 0.00525).toFixed(0) }
+                      formatValue={(value) =>
+                        ` ${new Intl.NumberFormat().format(value)}`
+                      }
+                      duration={300}
+                    />  
+                    </p>
+                </div>
+              </div>
+
+            
+              <div
+                className='col-xl-4 col-md-6 d-flex align-items-stretch'
+                data-aos='zoom-in'
+                data-aos-delay='100'
+              >
+                <div className='icon-box'>
+                  <div className='icon'>
+                    <img src={Icon1} />
+                  </div>
+                  <h5>HODL 2.0 Marketcap</h5>
+                  <p> 
+                    {/* {new Intl.NumberFormat().format(totalreflection.toFixed(0))} */}
+                    <AnimatedNumber
+                      value={Number(circulatingSupply*priceperToken).toFixed(0)}
+                      formatValue={(value) =>
+                        `$ ${new Intl.NumberFormat().format(value)}`
+                      }
+                      duration={300}
+                    />  
+                    </p>
+                </div>
+              </div>
+
+
            
             </div>
           </div>

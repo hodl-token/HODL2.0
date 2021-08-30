@@ -36,7 +36,7 @@ function Features() {
                   <img src={Icons5} />
                 </div>
                 <h4>
-                  <a href=''>Auto Trigerred Buy-Backs </a>
+                  <a href=''>Auto Triggered Buy-Backs </a>
                 </h4>
                 <p>
                   Two Way Auto Triggered Buy-Back Mechanisms to Ensure
@@ -76,7 +76,7 @@ function Features() {
             </div>
           </div>
 
-          <div
+          {/* <div
             className='col-xl-4 col-md-6 d-flex align-items-stretch   mt-xl-0'
             data-aos='zoom-in'
             data-aos-delay='400'
@@ -100,7 +100,7 @@ function Features() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div
             className='col-xl-4 col-md-6 d-flex align-items-stretch'

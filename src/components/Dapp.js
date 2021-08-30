@@ -20,7 +20,8 @@ export class Dapp extends Component {
         showcomponent1:true,
         showcomponent2: false,
         TotalbnbinrewardPool: 0,
-        bnbreward:0
+        bnbreward:0,
+        fibpool:0
        
     };
   }
@@ -59,6 +60,16 @@ export class Dapp extends Component {
         }
         )
 
+
+        contract.methods
+        .rewardHardcap()
+        .call()
+        .then((balance) => {
+          ////console.log(balance);
+          var tokens = web3.utils.toBN(balance).toString();
+          this.setState({ fibpool : web3.utils.fromWei(tokens, 'ether')})
+        });   
+
     
     }
 
@@ -87,7 +98,7 @@ export class Dapp extends Component {
          
         comp1 = false;
         comp2 = true;
-        var rewardshare = ( (Number(this.state.bnbreward) / Number(75) ) * 100).toFixed(3); 
+        var rewardshare = ( (Number(this.state.bnbreward) / Number(this.state.fibpool) ) * 100).toFixed(3); 
     }
     else {
         comp1 = true;
@@ -118,12 +129,12 @@ export class Dapp extends Component {
                                 <img src={Hodl2Image} />
                             </div>
                             <h4>HODL 2.0</h4>
-{ comp2 && <div>            <h5> Your Reward     Share</h5>
+{/* { comp2 && <div>            <h5> Your Reward     Share</h5>
                              <h5> {rewardshare} %</h5>     
                              <h6>Buy More To Increase Your BNB Reward Share!</h6>
 
 </div>
-}
+} */}
 
 
                             <h5></h5>
